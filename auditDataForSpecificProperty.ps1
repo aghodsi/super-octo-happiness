@@ -20,7 +20,9 @@ function GetUsersFromAAD {
     param (
         [string]$countryFilter = 'United States'
     )
+    #uncomment if not yet logged in or using in other context than automation
     #Connect-AzAccount
+    #change filter to whichever field you want to filter on
     return Get-AzADUser -Filter "startsWith(Country, '$countryFilter')"
 }
 
